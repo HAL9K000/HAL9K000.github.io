@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Koustav Halder — Teaching &amp; Outreach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="icon" type="image/png" href="imago/icon.png">
+  <link rel="stylesheet" href="css/meyer.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#ae8610', 'gold-text': '#d0a115',
+            'gold-link': '#9e9b04', dark: '#1c1919',
+          },
+          fontFamily: { newyorker: ['newyorker', 'serif'] },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black flex items-center px-3 py-2 gap-2">
+    <span id="s1" class="flex-grow min-w-0">
+      <span style="font-family:newyorker; color:var(--gold); font-size:1.35rem;
+                   font-style:italic; font-variant:small-caps; letter-spacing:0.04em;
+                   white-space:nowrap;">Koustav Halder</span>
+    </span>
+    <button class="openbtn ml-2" id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <div id="mySidepanel" class="sidepanel">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications &amp; Tools</a>
+      <a href="teaching.html" id="active">Teaching &amp; Outreach</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <div class="h-screen w-full relative">
+    <div id="PageTitle"
+         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                flex items-center justify-center px-12 py-5"
+         style="background-color:rgba(20,18,18,0.8); border:1.5px solid var(--gold); min-width:320px;">
+      <span style="font-family:newyorker; color:var(--gold);
+                   font-size:clamp(1.8rem,5vw,3.5rem);
+                   font-style:italic; font-variant:small-caps;
+                   letter-spacing:0.06em; white-space:nowrap;">Teaching &amp; Outreach</span>
+    </div>
+    <!-- No submenu pills per spec -->
+  </div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="content-panel relative bg-white w-full">
+    <button onclick="topFunction()" id="UpTownFunk" title="Back to top">↑</button>
+
+    <!-- ══ Teaching ═══════════════════════════════════════ -->
+    <section id="s-teaching" class="max-w-4xl mx-auto px-4 sm:px-8 py-10">
+      <h2 class="section-heading">Teaching</h2>
+
+      <ul class="styled-list">
+        <li>
+          <span class="qual-item-primary">Course / Module Title</span>
+          <span class="qual-item-secondary">Role (e.g. Teaching Assistant) · Institution · Year</span>
+        </li>
+        <li>
+          <span class="qual-item-primary">Course / Module Title</span>
+          <span class="qual-item-secondary">Role · Institution · Year</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ══ Outreach ════════════════════════════════════════ -->
+    <section id="s-outreach" class="max-w-4xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+      <h2 class="section-heading">Outreach</h2>
+
+      <ul class="styled-list">
+        <li>
+          <span class="qual-item-primary">Event or Activity Title</span>
+          <span class="qual-item-secondary">Brief description or role · Location · Year</span>
+        </li>
+        <li>
+          <span class="qual-item-primary">Event or Activity Title</span>
+          <span class="qual-item-secondary">Brief description or role · Location · Year</span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="w-full bg-black text-center py-4"
+          style="color:#8a8c87; font-size:11.5px; font-family:newyorker;">
+    <p class="mt-2">
+      Designed with <img src="imago/heart2.png" alt="Lau" class="inline"/>
+      by <span class="cursor-default">KH&nbsp;:)&nbsp;&nbsp;</span>&copy; 2025
+    </p>
+  </footer>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/uptown.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const panel   = document.getElementById('mySidepanel');
+    function toggleNav() {
+      const isOpen = panel.style.width === '250px';
+      panel.style.width = isOpen ? '0' : '250px';
+      menuBtn.classList.toggle('is-open', !isOpen);
+    }
+    document.addEventListener('click', function(e) {
+      if (panel.style.width === '250px' &&
+          !panel.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
+        panel.style.width = '0';
+        menuBtn.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

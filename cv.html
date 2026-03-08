@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Koustav Halder — CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="icon" type="image/png" href="imago/icon.png">
+  <link rel="stylesheet" href="css/meyer.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#ae8610', 'gold-text': '#d0a115',
+            'gold-link': '#9e9b04', dark: '#1c1919',
+          },
+          fontFamily: { newyorker: ['newyorker', 'serif'] },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body  id="hustlepage" class="min-h-screen">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black flex items-center px-4 py-3 gap-2">
+
+    <!-- Logo icon -->
+    <!--
+    <span id="s1" class="flex-shrink-0 h-10 w-10">
+      <img src="imago/icon.png" alt="Lit Club Logo" title=";)" class="h-full w-auto"/>
+    </span>
+    -->
+
+    <!-- Name — left-adjusted, grows to fill space -->
+    <span id="s2" class="flex-grow min-w-0">
+      <span style="font-family: helveticalightreg, helvetica, verdana, sans-serif; color: var(--gold); font-size: 1.325rem;
+                   font-style: normal; font-variant: petite-caps; letter-spacing: 0.02em;
+                   white-space: nowrap;">Koustav Halder</span>
+    </span>
+
+
+    <!-- Lit wordmark -->
+    <!--
+    <span id="s2" class="flex-shrink-0 h-10">
+      <img src="imago/litlogo1.png" alt="Lit Club Logo" title=";)" class="h-full w-auto"/>
+    </span> 
+    -->
+
+    <!-- Header banner — grows to fill space -->
+    <!--
+    <span id="s3" class="flex-grow min-w-0">
+      <img src="imago/header.png" alt="The Literary Club" class="h-10 w-auto max-w-full"/>
+    </span>
+    -->
+
+    <!-- IISER-P logo -->
+     <!--
+    <span id="s4" class="flex-shrink-0 h-10 hidden sm:block">
+      <a href="http://www.iiserpune.ac.in/" target="_blank">
+        <img src="imago/iiserpunelogo.svg" alt="IISER-P Logo" class="h-full w-auto"/>
+      </a>
+    </span>
+    -->
+
+    <!-- Social icons -->
+    <span id="s5" class="flex-shrink-0  h-7">
+      <a href="https://github.com/HAL9K000" target="_blank">
+        <img src="imago/github-icon-white.svg" alt="GitHub" title="GitHub Page" class="h-full w-auto"/>
+      </a>
+    </span>
+    <span id="s6" class="flex-shrink-0 z-200 h-8">
+      <a href="https://www.instagram.com/litclubiiserpune/" target="_blank">
+        <img src="imago/insta.png" alt="Insta" title="Our Insta Page" class="h-full w-auto"/>
+      </a>
+    </span>
+
+    <!-- Hamburger / × toggle -->
+    <button class="openbtn ml-2" id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Sidepanel (no close anchor needed — button handles it) -->
+    <div id="mySidepanel" class="sidepanel">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications &amp; Tools</a>
+      <a href="cv.html" id="active">CV</a>
+      <a href="blogs.html">Teaching &amp; Outreach</a>
+      <a href="opac.html">Contact</a>
+    </div>
+
+  </header>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <div class="h-screen w-full relative">
+    <div id="PageTitle"
+         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                flex items-center justify-center px-3 py-7"
+         style="background-color: rgba(20, 18, 18, 0.70);
+                border: 2.0px solid var(--gold); border-radius: 5px;
+                min-width: 240px;">
+      <span style="font-family: helveticalightreg; color: var(--gold-text);
+                   font-size: clamp(2.0rem, 5.5vw, 2.5rem);
+                   font-style: normal; font-variant: all-small-caps;
+                   letter-spacing: 0.06em; white-space: nowrap;">CV</span>
+    </div>
+    <!-- No submenu pills: subsections are compact enough to read linearly -->
+  </div>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="content-panel relative bg-white w-full">
+    <button onclick="topFunction()" id="UpTownFunk" title="Back to top">↑</button>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-8 py-10">
+
+      <!-- ── Resume request line ────────────────────────── -->
+      <p class="cv-contact-line content-text">
+        For a full curriculum vitae, please reach out at
+        <a href="mailto:koustav.halder@rutgers.edu">koustav.halder@rutgers.edu</a>.
+      </p>
+
+      <!-- ══ Education ════════════════════════════════════ -->
+      <div class="cv-block">
+        <h3 class="cv-subheading">Education</h3>
+        <ul class="styled-list">
+          <li>
+            <span class="qual-item-primary">Ph.D. in Ecology &amp; Evolution, 2021 &mdash; :</span>
+            <span class="qual-item-secondary">Rutgers University, NJ, USA</span>
+          </li>
+        <li>
+          <span class="qual-item-primary">M.S. in Biology, 2020 &mdash; 2021 :</span>
+          <span class="qual-item-secondary">Indian Institute of Science Education &amp; Research (IISER), Pune</span>
+        </li>
+        <li>
+          <span class="qual-item-primary">B.S. in Biology, 2016 &mdash; 2020 :</span>
+          <span class="qual-item-secondary">Indian Institute of Science Education &amp; Research (IISER), Pune</span>
+        </li>
+        </ul>
+      </div>
+
+      <!-- ══ Research Interests ════════════════════════════ -->
+      <div class="cv-block">
+        <h3 class="cv-subheading">Research Interests</h3>
+        <ul class="styled-list">
+          <li>Socio-ecological tipping points &amp; dryland resilience</li>
+          <li>Spatial ecology &amp; vegetation pattern formation</li>
+          <li>Critical transitions &amp; early-warning signals</li>
+          <li>Stochastic modelling &amp; statistical inference</li>
+        </ul>
+      </div>
+
+      <!-- ══ Programming & Computational Skills ═══════════ -->
+      <div class="cv-block">
+        <h3 class="cv-subheading">Programming &amp; Computational Skills</h3>
+        <div class="cv-skills-grid">
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-label">Languages</span>
+            <span class="cv-skill-items">Python, R, CUDA, C/C++, Bash, JS, Mathematica, Julia, HTML, CSS</span>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-label">HPC &amp; Parallelism</span>
+            <span class="cv-skill-items">Slurm, OpenMP, Dask; experience with
+              multi-node cluster job submission and profiling, and server management </span>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-label">Scientific Stack</span>
+            <span class="cv-skill-items">NumPy/CuPy, SciPy, Pandas, Numba, Pytorch, Matplotlib, Seaborn,
+              scikit-learn, NetworkX, rasterio, geopandas, FFTW3, armadillo</span>
+          </div>
+
+          <div class="cv-skill-group">
+            <span class="cv-skill-label">Tools &amp; Environments</span>
+            <span class="cv-skill-items">ArcGIS, Google Earth Engine, Git/GitHub, Docker, LaTeX</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ Selected Publications ════════════════════════ -->
+      <!--
+      <div class="cv-block">
+        <h3 class="cv-subheading">Selected Publications</h3>
+        <ul class="styled-list">
+          <li>
+            <span class="qual-item-primary">Halder &amp; Bonachela (2026)</span>
+            <span class="qual-item-secondary">Title of paper.
+              <em>Journal</em>.
+              <a href="publications.html" class="cv-inline-link">Full list →</a>
+            </span>
+          </li>
+          <li>
+            <span class="qual-item-primary">Chen, Halder &amp; Bonachela (2025)</span>
+            <span class="qual-item-secondary">Title of paper.
+              <em>Journal</em>.
+            </span>
+          </li>
+        </ul>
+      </div>
+     -->
+
+      <!-- ══ Teaching & Supervision ═══════════════════════ -->
+      <!--
+      <div class="cv-block">
+        <h3 class="cv-subheading">Teaching &amp; Supervision</h3>
+        <ul class="styled-list">
+          <li>
+            <span class="qual-item-primary">Course Title</span>
+            <span class="qual-item-secondary">Role · Institution · Year</span>
+          </li>
+          <li>
+            <span class="qual-item-primary">Undergraduate project supervision</span>
+            <span class="qual-item-secondary">Institution · Year</span>
+          </li>
+        </ul>
+      </div>
+      -->
+
+      <!-- ══ Talks & Conferences ═══════════════════════════ -->
+      <div class="cv-block">
+        <h3 class="cv-subheading">Talks &amp; Conferences</h3>
+        <ul class="styled-list">
+          <li>
+            <span class="qual-item-primary">Talk / Poster Title</span>
+            <span class="qual-item-secondary">Conference Name · Location · Year</span>
+          </li>
+          <li>
+            <span class="qual-item-primary">Talk / Poster Title</span>
+            <span class="qual-item-secondary">Conference Name · Location · Year</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ══ Awards & Funding ══════════════════════════════ -->
+      <div class="cv-block">
+        <h3 class="cv-subheading">Awards &amp; Funding</h3>
+        <ul class="styled-list">
+          <li>
+            <span class="qual-item-primary">Fellowship / Award Name</span>
+            <span class="qual-item-secondary">Awarding body · Year</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ══ Professional Service ══════════════════════════ -->
+      <!--
+      <div class="cv-block">
+        <h3 class="cv-subheading">Professional Service</h3>
+        <ul class="styled-list">
+          <li>Peer reviewer for <em>Journal Name</em>, <em>Journal Name</em></li>
+          <li>
+            <span class="qual-item-primary">Committee / Society role</span>
+            <span class="qual-item-secondary">Organisation · Year</span>
+          </li>
+        </ul>
+      </div>
+      -->
+
+    </div><!-- /max-w-3xl -->
+  </main>
+  
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+
+  <footer class="w-full bg-black text-center py-4"
+          style="color:#8a8c87; font-size:11.5px; font-family:newyorker;">
+    <p class="mt-2">
+      Designed with
+      <img src="imago/heart2.png" alt="Lau" title="<3" class="inline"/>
+      by <span class="cursor-default">KH&nbsp;:)&nbsp;&nbsp;</span>&copy; 2026
+    </p>
+    <p class="mt-1">
+      Hosted on <span> GitHub Pages</span>, source code available <a href="https://github.com/kh-lit-club" target="_blank">here</a>.
+    </p>
+  </footer>
+
+  <!-- ─── Scripts ───────────────────────────────────── -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/uptown.js"></script>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const panel   = document.getElementById('mySidepanel');
+
+    function toggleNav() {
+      const isOpen = panel.style.width === '250px';
+      panel.style.width = isOpen ? '0' : '250px';
+      menuBtn.classList.toggle('is-open', !isOpen);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (panel.style.width === '250px' &&
+          !panel.contains(e.target) &&
+          e.target !== menuBtn &&
+          !menuBtn.contains(e.target)) {
+        panel.style.width = '0';
+        menuBtn.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>
