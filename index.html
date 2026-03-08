@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Koustav Halder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="icon" type="image/png" href="imago/icon.png">
+  <link rel="stylesheet" href="css/meyer.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold:        '#ae8610',
+            'gold-text': '#d0a115',
+            'gold-link': '#9e9b04',
+            dark:        '#1c1919',
+          },
+          fontFamily: {
+            newyorker: ['newyorker', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="homepage" class="min-h-screen">
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════ -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black flex items-center px-4 py-3 gap-2">
+
+    <span id="s2" class="flex-grow min-w-0">
+      <span style="font-family: helveticalightreg, helvetica, verdana, sans-serif; color: var(--gold); font-size: 1.325rem;
+                   font-style: normal; font-variant: petite-caps; letter-spacing: 0.02em;
+                   white-space: nowrap;">Koustav Halder</span>
+    </span>
+
+    <!-- Social icons -->
+    <span id="s5" class="flex-shrink-0  h-7">
+      <a href="https://github.com/HAL9K000" target="_blank">
+        <img src="imago/github-icon-white.svg" alt="GitHub" title="GitHub Page" class="h-full w-auto"/>
+      </a>
+    </span>
+    <span id="s6" class="flex-shrink-0 z-200 h-8">
+      <a href="https://www.instagram.com/litclubiiserpune/" target="_blank">
+        <img src="imago/insta.png" alt="Insta" title="Our Insta Page" class="h-full w-auto"/>
+      </a>
+    </span>
+
+    <button class="openbtn ml-2" id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Sidepanel (no close anchor needed — button handles it) -->
+    <div id="mySidepanel" class="sidepanel">
+      <a href="index.html" id="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications &amp; Tools</a>
+      <a href="cv.html">CV</a>
+      <a href="blogs.html">Teaching &amp; Outreach</a>
+      <a href="opac.html">Contact</a>
+    </div>
+    </div>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO — full viewport over fixed background.
+       Page title banner + submenu pills sit here.
+  ════════════════════════════════════════════════════ -->
+  <div class="h-screen w-full relative">
+
+    <!-- Page title banner -->
+    <div id="PageTitle"
+         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                flex items-center justify-center px-3 py-7"
+         style="background-color: rgba(20, 18, 18, 0.70);
+                border: 2.0px solid var(--gold); border-radius: 5px;
+                min-width: 280px;">
+      <span style="font-family: helveticalightreg; color: var(--gold);
+                   font-size: clamp(2.0rem, 5.5vw, 2.5rem);
+                   font-style: normal; font-variant: all-small-caps;
+                   letter-spacing: 0.06em; white-space: nowrap;">Home</span>
+    </div>
+
+    <!-- Sub-menu pills at 75% down the hero -->
+    <nav id="submenu"
+         class="absolute left-0 w-full z-40 flex flex-wrap justify-center gap-3 px-4 py-3"
+         style="top: 75%;">
+      <a href="#s-about">About</a>
+      <a href="#s-qualifications">Academic Qualifications</a>
+      <a href="#s-contact">Contact</a>
+    </nav>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       MAIN CONTENT PANEL
+  ════════════════════════════════════════════════════ -->
+  <main class="content-panel relative bg-white w-full">
+
+    <button onclick="topFunction()" id="UpTownFunk" title="Back to top">↑</button>
+
+    <!-- ─── Divider + section label ──────────────────── -->
+    <div class="flex justify-center pt-6 pb-2">
+      <img src="imago/divider3.png" alt="Divider" class="w-3/5 max-w-lg"/>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 1 — About
+         Desktop: image left, text right (side by side)
+         Mobile:  section heading, then image, then text
+    ═════════════════════════════════════════════════ -->
+   <section id="s-about" class="max-w-5xl mx-auto px-4 sm:px-8 py-10">
+
+      <h2 class="section-heading">About</h2>
+
+      <div class="home-aside-wrap">
+
+        <!-- Aside image — hidden on mobile, shown desktop left -->
+        <aside class="home-aside-left">
+          <img src="imago/moneyshot.png" alt="" title=""
+               class="w-full h-full max-w-full block  object-cover"
+               style="border: 2px solid var(--gold);"/>
+        </aside>
+
+        <!-- Mobile-only image — shown between heading and text on small screens -->
+        <div class="home-aside-mobile">
+          <img src="imago/moneyshot.png" alt="" title=""
+               class="w-4/5 max-w-xs mx-auto block object-cover"
+               style="border: 2px solid var(--gold);"/>
+        </div>
+
+        <!-- Main text -->
+        <div class="home-aside-text content-text">
+          <p><span class="Styled">W</span>hat's in a name, you ask?</p>
+          <p>Plenty, when the name's Lit. Duly stamped and approved by IISER Pune too.
+             Fire, up in smoke, illumination, enlightenment, flaring, amazement, scintillation and text.
+             Reams of it, in fact, in all possible forms, fonts and kerning. In all figures of speech.
+             We don't judge books by covers. From Tolkien to Tolstoy, John Green to Garcia Marquez,
+             Dante to Doyle, the bases are covered. And poetry too, by the truckload.
+             A sly, ribald limerick here, a lovelorn, sprawling ballad there and pretty much everything in between.
+             You'd be surprised at the number of poets in IISER.
+          </p>
+          <p>But then a name can encompass only so much. The Lit Club is so much more.</p>
+          <p>If anything diversity is our A-game. We try and accommodate everyone. Grammar Nazis, closet poets,
+             bathroom singers (yes!), occasional readers, recalcitrant fanboys, cynics — you name it.
+             Just about anyone who likes to embark on a creative streak every now or then, or who shares
+             a common interest in the written word, would find the Lit Club a swell fit.
+          </p>
+          <p><span class="Styled">A</span>nd what exactly do we do?</p>
+          <p>That's, well, a long list. Poetry slams, treasure hunts, murder mysteries, debates, talks and
+             discussion sessions to whit. Add to that forging new bonds and having tons of fun, and you'll
+             start getting the picture.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 2 — Academic Qualifications
+    ═════════════════════════════════════════════════ -->
+    <section id="s-qualifications" class="max-w-5xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+
+      <h2 class="section-heading">Academic Qualifications</h2>
+
+      <ul class="styled-list content-text">
+        <li>
+          <span class="qual-item-primary">Ph.D. in Ecology &amp; Evolution, 2021 &mdash; :</span>
+          <span class="qual-item-secondary">Rutgers University, NJ, USA</span>
+        </li>
+        <li>
+          <span class="qual-item-primary">M.S. in Biology, 2020 &mdash; 2021 :</span>
+          <span class="qual-item-secondary">Indian Institute of Science Education &amp; Research (IISER), Pune</span>
+        </li>
+        <li>
+          <span class="qual-item-primary">B.S. in Biology, 2016 &mdash; 2020 :</span>
+          <span class="qual-item-secondary">Indian Institute of Science Education &amp; Research (IISER), Pune</span>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 3 — Contact
+         Desktop: text left, image right (side by side)
+         Mobile:  text first, image after
+    ═════════════════════════════════════════════════ -->
+    <section id="s-contact" class="max-w-5xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+
+      <h2 class="section-heading">Contact</h2>
+
+      <div class="home-aside-wrap">
+
+        <!-- Main text (always first in source order) -->
+        <div class="home-aside-text content-text">
+        <p><span class="Styled">P</span>lease feel free to reach out below, always happy to connect!</p>
+          <p>
+            <span class="home-contact-label">Email:</span>
+            <a href="mailto:koustav.halder@rutgers.edu">koustav.halder@rutgers.edu</a>
+          </p>
+          <p>
+            <span class="home-contact-label">Address:</span> <br/>
+            Department of Ecology, Evolution, and Natural Resources, Rutgers University<br/>
+            14 College Farm Road, New Brunswick, NJ 08901, USA
+          </p>
+        </div>
+
+        <!-- Aside image — right on desktop, below text on mobile -->
+        <aside class="home-aside-right">
+          <img src="imago/email.png" alt="Email Icon" title="Email"
+               class="w-full h-full object-contain"/>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+
+  <footer class="w-full bg-black text-center py-4"
+          style="color:#8a8c87; font-size:11.5px; font-family:newyorker;">
+    <p class="mt-2">
+      Designed with
+      <img src="imago/heart2.png" alt="Lau" title="<3" class="inline"/>
+      by <span class="cursor-default">KH&nbsp;:)&nbsp;&nbsp;</span>&copy; 2026
+    </p>
+    <p class="mt-1">
+      Hosted on <span> GitHub Pages</span>, source code available <a href="https://github.com/kh-lit-club" target="_blank">here</a>.
+    </p>
+  </footer>
+
+  <!-- ─── Scripts ───────────────────────────────────── -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/uptown.js"></script>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const panel   = document.getElementById('mySidepanel');
+
+    function toggleNav() {
+      const isOpen = panel.style.width === '250px';
+      panel.style.width = isOpen ? '0' : '250px';
+      menuBtn.classList.toggle('is-open', !isOpen);
+    }
+
+    document.addEventListener('click', function(e) {
+      if (panel.style.width === '250px' &&
+          !panel.contains(e.target) &&
+          e.target !== menuBtn &&
+          !menuBtn.contains(e.target)) {
+        panel.style.width = '0';
+        menuBtn.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

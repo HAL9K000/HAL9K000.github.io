@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="icon" type="image/png" href="imago/icon.png">
+  <link rel="stylesheet" href="css/meyer.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+
+  <!-- Tailwind CDN with custom theme extension -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold:      '#ae8610',
+            'gold-text': '#d0a115',
+            'gold-link': '#9e9b04',
+            dark:      '#1c1919',
+          },
+          fontFamily: {
+            newyorker: ['newyorker', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="research-page" class="min-h-screen">
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER — fixed at top, same structure as original
+  ════════════════════════════════════════════════════ -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black flex items-center px-4 py-3 gap-2">
+
+    <!-- Logo icon -->
+    <!--
+    <span id="s1" class="flex-shrink-0 h-10 w-10">
+      <img src="imago/icon.png" alt="Lit Club Logo" title=";)" class="h-full w-auto"/>
+    </span>
+    -->
+
+    <!-- Name — left-adjusted, grows to fill space -->
+    <span id="s2" class="flex-grow min-w-0">
+      <span style="font-family: helveticalightreg, helvetica, verdana, sans-serif; color: var(--gold); font-size: 1.325rem;
+                   font-style: normal; font-variant: petite-caps; letter-spacing: 0.02em;
+                   white-space: nowrap;">Koustav Halder</span>
+    </span>
+
+
+    <!-- Lit wordmark -->
+    <!--
+    <span id="s2" class="flex-shrink-0 h-10">
+      <img src="imago/litlogo1.png" alt="Lit Club Logo" title=";)" class="h-full w-auto"/>
+    </span> 
+    -->
+
+    <!-- Header banner — grows to fill space -->
+    <!--
+    <span id="s3" class="flex-grow min-w-0">
+      <img src="imago/header.png" alt="The Literary Club" class="h-10 w-auto max-w-full"/>
+    </span>
+    -->
+
+    <!-- IISER-P logo -->
+     <!--
+    <span id="s4" class="flex-shrink-0 h-10 hidden sm:block">
+      <a href="http://www.iiserpune.ac.in/" target="_blank">
+        <img src="imago/iiserpunelogo.svg" alt="IISER-P Logo" class="h-full w-auto"/>
+      </a>
+    </span>
+    -->
+
+    <!-- Social icons -->
+    <span id="s5" class="flex-shrink-0  h-7">
+      <a href="https://github.com/HAL9K000" target="_blank">
+        <img src="imago/github-icon-white.svg" alt="GitHub" title="GitHub Page" class="h-full w-auto"/>
+      </a>
+    </span>
+    <span id="s6" class="flex-shrink-0 z-200 h-8">
+      <a href="https://www.instagram.com/litclubiiserpune/" target="_blank">
+        <img src="imago/insta.png" alt="Insta" title="Our Insta Page" class="h-full w-auto"/>
+      </a>
+    </span>
+
+    <!-- Hamburger / × toggle -->
+    <button class="openbtn ml-2" id="menuBtn" onclick="toggleNav()" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Sidepanel (no close anchor needed — button handles it) -->
+    <div id="mySidepanel" class="sidepanel">
+      <a href="index.html">Home</a>
+      <a href="research.html" id="active">Research</a>
+      <a href="publications.html">Publications &amp; Tools</a>
+      <a href="cv.html">CV</a>
+      <a href="blogs.html">Teaching &amp; Outreach</a>
+      <a href="opac.html">Contact</a>
+    </div>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO — full viewport, shows the background image.
+       The white content panel scrolls up over it.
+       Submenu lives here at 75vh so it scrolls away naturally.
+  ════════════════════════════════════════════════════ -->
+  <div class="h-screen w-full relative">
+
+    <!-- Watermark icon faintly centred -->
+    <!-- <span id="BackgroundImg" class="w-40 h-40 opacity-40 block pointer-events-none
+                                    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span> -->
+    <!-- Page title banner — dark rect with gold border and text -->
+    <div id="PageTitle"
+         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                flex items-center justify-center px-3 py-7"
+         style="background-color: rgba(20, 18, 18, 0.70);
+                border: 2.0px solid var(--gold); border-radius: 5px;
+                min-width: 320px;">
+      <span style="font-family: helveticalightreg; color: var(--gold-text);
+                   font-size: clamp(2.0rem, 5.5vw, 2.5rem);
+                   font-style: normal; font-variant: all-small-caps;
+                   letter-spacing: 0.06em; white-space: nowrap;">Research</span>
+    </div>
+
+    <!-- SUB-MENU at 75% down the hero (25% from bottom), scrolls away with page -->
+    <nav id="submenu"
+         class="absolute left-0 w-full z-40 flex flex-wrap justify-center gap-3 px-4 py-3"
+         style="top: 75%;">
+      <a href="#s-tipp">Tipping Points &amp; Dryland Resilience</a>
+      <a href="#s-spatialeco">Spatial Ecology</a>
+      <a href="#s-crittrans">Critical Transitions</a>
+      <a href="#s-misc">Miscellaneous</a>
+    </nav>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       MAIN CONTENT PANEL — white, in normal document
+       flow, so it naturally scrolls up over the fixed bg
+  ════════════════════════════════════════════════════ -->
+  <main class="content-panel relative bg-white w-full">
+
+    <!-- Scroll-to-top button -->
+    <button onclick="topFunction()" id="UpTownFunk" title="Back to top">↑</button>
+
+    <!-- ─── Divider + section label ──────────────────── -->
+    <div class="flex justify-center pt-6 pb-2">
+      <img src="imago/divider3.png" alt="Divider" class="w-3/5 max-w-lg"/>
+    </div>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 1 — CSI & Treasure Hunt
+    ═════════════════════════════════════════════════ -->
+    <section id="s-tipp" class="max-w-4xl mx-auto px-4 sm:px-8 py-10">
+
+      <h2 class="section-heading">Socio-Ecological Tipping Points &amp; Dryland Resilience</h2>
+
+      <!-- Slideshow 1 -->
+      <div class="relative w-full sm:w-4/5 mx-auto h-48 sm:h-[420px] mb-8" id="slideshow1-wrap">
+        <button class="slide-prev" onclick="previous(0);">&#8249;</button>
+        <div class="slideshow h-full">
+          <img src="imago/resilience/desert-1.png" class="curr" alt="Fig I from Halder &amp; Bonachela, 2026"/>
+          <img src="imago/resilience/desert-2.png" alt="Halder &amp; Bonachela, 2026"/>
+          <img src="imago/resilience/desert-3.png" alt="Chen, Halder &amp; Bonachela, 2025"/>
+          <img src="imago/resilience/desert-4.png" alt="Halder &amp; Bonachela, 2026"/>
+          <img src="imago/resilience/desert-5.png" alt="Chen, Halder &amp; Bonachela, 2025"/>
+        </div>
+        <div class="slideshow-indicator"></div>
+        <button class="slide-next" onclick="next(0);">&#8250;</button>
+      </div>
+
+      <div id="d1s02" class="content-text">
+        <p><span class="Styled">I</span> explore the resilience of dryland ecosystems to desertification in the face of climate change, grazing pressures, land use 
+        and other anthropogenic pressures utilising a mix of theoretical, statistical and empirical data&hyphen;driven approaches. I primarily investigate
+        the desertification process from the lens of complex systems theory and stochastic processes, with an emphasis on the role of dryland vegetation spatial patterns 
+        in predicting and understanding the underlying transitions. I do so using a mix of stochastic computational modelling and statistical analyses of satellite imagery.
+        </p>
+        <!--
+        <blockquote cite="http://www.karavaan.org/#l01">
+          &quot;<span class="Styled">B</span>lockquote text...&quot;
+        </blockquote>
+        -->
+        <p><span class="Styled">R</span>esizable text...</p>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 2 — Poetry Nights
+    ═════════════════════════════════════════════════ -->
+    <section id="s-spatialeco" class="max-w-4xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+
+      <h2 class="section-heading">Spatial Ecology</h2>
+
+      <!--
+      <img src="imago/poetrynight.jpg" alt="Poetry Night" title="Starry, starry night..."
+           class="block mx-auto w-4/5 max-w-lg max-h-64 sm:max-h-[420px]
+                  object-contain border-4 mb-8"
+           style="border-color: var(--gold);"/>
+      -->
+
+      <!-- Slideshow 3 -->
+      <div class="relative w-full sm:w-4/5 mx-auto h-48 sm:h-[420px] mb-8" id="slideshow2-wrap">
+        <button class="slide-prev" onclick="previous(1);">&#8249;</button>
+        <div class="slideshow h-full">
+          <img src="imago/spatialeco/spatialeco-1.png" class="curr" alt="Halder &amp; Bonachela, 2026"/>
+          <img src="imago/spatialeco/spatialeco-2.png" alt="Halder &amp; Bonachela, 2026"/>
+          <img src="imago/spatialeco/spatialeco-3.png" alt="Halder &amp; Bonachela, 2026"/>
+          <img src="imago/spatialeco/spatialeco-4.png" alt="Halder &amp; Bonachela, 2026"/>
+        </div>
+        <div class="slideshow-indicator"></div>
+        <button class="slide-next" onclick="next(1);">&#8250;</button>
+      </div>
+
+      <div class="content-text">
+        <p><span class="Styled">E</span>cological processes such as dispersal, consumer movement and habitat fragmentation play an outsized role in shaping 
+        natural and mixed landscapes. Furthermore, </p>
+        <p><span class="Styled">T</span>ext...</p>
+        <p><span class="Styled">T</span>ext...</p>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 3 — Hemingway Memorial Debate
+    ═════════════════════════════════════════════════ -->
+    <section id="s-crittrans" class="max-w-4xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+
+      <h2 class="section-heading">Critical Transitions</h2>
+
+      <!-- Slideshow 2 -->
+      <div class="relative w-full sm:w-4/5 mx-auto h-48 sm:h-[420px] mb-8" id="slideshow3-wrap">
+        <button class="slide-prev" onclick="previous(2);">&#8249;</button>
+        <div class="slideshow h-full">
+          <img src="imago/crit-trans/crit-1.png" class="curr" alt="HMD 2020"/>
+          <img src="imago/crit-trans/crit-2.png" alt="HMD 2020"/>
+        </div>
+        <div class="slideshow-indicator"></div>
+        <button class="slide-next" onclick="next(2);">&#8250;</button>
+      </div>
+
+      <div class="content-text">
+        <p><span class="Styled">M</span>ore text...</p>
+        <p><span class="Styled">E</span>ven more text that can increase or decrease...</p>
+        <p><span class="Styled">S</span>ome italicised text</p>
+        <p class="ital"></p>
+        <p><span class="Styled">S</span>ome text...</p>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 4 — Parliamentary Debate
+    ═════════════════════════════════════════════════ -->
+    <section id="s-misc" class="max-w-4xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
+
+      <h2 class="section-heading">Miscellaneous</h2>
+
+      <!-- Slideshow 3 -->
+      <div class="relative w-full sm:w-4/5 mx-auto h-48 sm:h-[420px] mb-8">
+        <button class="slide-prev" onclick="previous(3);">&#8249;</button>
+        <div class="slideshow h-full">
+          <img src="imago/debate/pd1.JPG" class="curr" alt="PD"/>
+          <img src="imago/debate/pd2.JPG" alt="PD"/>
+          <img src="imago/debate/pd6.JPG" alt="PD"/>
+          <img src="imago/debate/pd7.JPG" alt="PD"/>
+        </div>
+        <div class="slideshow-indicator"></div>
+        <button class="slide-next" onclick="next(3);">&#8250;</button>
+      </div>
+
+      <div class="content-text">
+        <p><span class="Styled">I</span>n 2019, some text...</p>
+        <p><span class="Styled">M</span>ore text....</p>
+        <p><span class="Styled">A</span> text with some
+          <a href="http://www.karavaan.org/#l01" target="_blank">random link</a>....
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ════════════════════════════════════════════════
+         SECTION 5 — Other Events / Miscellaneous
+    ═════════════════════════════════════════════════ -->
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════ -->
+  <footer class="w-full bg-black text-center py-4"
+          style="color:#8a8c87; font-size:11.5px; font-family:newyorker;">
+    <p class="mt-2">
+      Designed with
+      <img src="imago/heart2.png" alt="Lau" title="<3" class="inline"/>
+      by <span class="cursor-default">KH&nbsp;:)&nbsp;&nbsp;</span>&copy; 2026
+    </p>
+    <p class="mt-1">
+      Hosted on <span> GitHub Pages</span>, source code available <a href="https://github.com/kh-lit-club" target="_blank">here</a>.
+    </p>
+  </footer>
+
+  <!-- ─── Scripts (unchanged) ───────────────────────── -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/slideshow.js"></script>
+  <script src="js/uptown.js"></script>
+
+  <script>
+    const menuBtn  = document.getElementById('menuBtn');
+    const panel    = document.getElementById('mySidepanel');
+
+    function toggleNav() {
+      const isOpen = panel.style.width === '250px';
+      panel.style.width = isOpen ? '0' : '250px';
+      menuBtn.classList.toggle('is-open', !isOpen);
+    }
+
+    /* Close if user clicks outside the panel */
+    document.addEventListener('click', function(e) {
+      if (panel.style.width === '250px' &&
+          !panel.contains(e.target) &&
+          e.target !== menuBtn &&
+          !menuBtn.contains(e.target)) {
+        panel.style.width = '0';
+        menuBtn.classList.remove('is-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

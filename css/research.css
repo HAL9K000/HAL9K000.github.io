@@ -1,0 +1,240 @@
+/* ── Custom font ───────────────────────────────────────────── */
+@font-face {
+  font-family: newyorker;
+  src: url(fonts/newyork.TTF);
+}
+
+/* ── CSS custom properties ─────────────────────────────────── */
+:root {
+  --gold:       #ae8610;
+  --gold-text:  #d0a115c7;
+  --gold-link:  #9e9b04;
+  --gold-hover: #c7c312;
+  --dark:       #1c1919;
+}
+
+/* ── Body / parallax background ───────────────────────────── */
+body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Desktop bg */
+@media (min-width: 900px) {
+  body { background-image: url(imago/entire_gang.JPG); }
+}
+/* Mobile bg */
+@media (max-width: 899px) {
+  body { background-image: url(imago/cover1alt.jpg); background-size: 100% auto; }
+}
+
+/* ── Sidepanel ─────────────────────────────────────────────── */
+.sidepanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: width 0.4s ease;
+  padding-top: 60px;
+}
+.sidepanel a {
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: newyorker;
+  color: #ccc;
+  display: block;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.sidepanel a:hover { color: var(--gold); }
+.sidepanel a#active { color: var(--gold); }
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0; right: 16px;
+  font-size: 36px;
+}
+.openbtn {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: color 0.2s;
+}
+.openbtn:hover { color: var(--gold); }
+
+/* ── Slideshow ─────────────────────────────────────────────── */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slideshow img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+}
+.slideshow img.curr {
+  display: block !important;
+}
+
+/* Gradient prev/next buttons */
+.slide-prev,
+.slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+  font-family: sans-serif;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  /* tall narrow pill */
+  width: 48px;
+  height: 110px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-prev:hover, .slide-next:hover { opacity: 1; }
+
+.slide-prev {
+  left: 0;
+  background: linear-gradient(-90deg, #ffffff00, #000000cc);
+}
+.slide-next {
+  right: 0;
+  background: linear-gradient(90deg, #ffffff00, #000000cc);
+}
+
+/* Mobile overrides for slide buttons */
+@media (max-width: 899px) {
+  .slide-prev { left: -8px; width: 38px; height: 80px; font-size: 1.4rem; }
+  .slide-next { right: -8px; width: 38px; height: 80px; font-size: 1.4rem; }
+}
+
+/* ── Drop-cap styled letter ────────────────────────────────── */
+.Styled {
+  font-family: newyorker;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+/* ── Italics helper ────────────────────────────────────────── */
+.ital { font-style: italic; }
+
+/* ── Section headings (gold italic small-caps) ─────────────── */
+.section-heading {
+  font-family: newyorker;
+  font-size: 1.75rem;
+  color: var(--gold-text);
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Content text ──────────────────────────────────────────── */
+.content-text {
+  font-family: verdana, sans-serif;
+  font-size: 16.5px;
+  line-height: 19.5px;
+  text-align: justify;
+}
+.content-text p,
+.content-text blockquote {
+  margin-bottom: 2vh;
+}
+.content-text blockquote { font-style: italic; }
+
+/* ── Internal anchor links ─────────────────────────────────── */
+.content-panel a {
+  text-decoration: none;
+  color: var(--gold-link);
+  transition: color 0.2s;
+}
+.content-panel a:hover,
+.content-panel a:focus { color: var(--gold-hover); }
+
+/* ── UpTownFunk scroll-to-top button ───────────────────────── */
+#UpTownFunk {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  z-index: 99;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  border-radius: 6px;
+  opacity: 0.8;
+  transition: opacity 0.3s, color 0.3s;
+}
+#UpTownFunk:hover,
+#UpTownFunk:focus {
+  color: var(--gold);
+  opacity: 0.95;
+}
+@media (min-width: 900px) {
+  #UpTownFunk { width: 90px; height: 90px; font-size: 2rem; right: 30px; }
+}
+@media (max-width: 899px) {
+  #UpTownFunk { width: 56px; height: 52px; font-size: 1.6rem; }
+}
+
+/* ── Sub-menu nav pill links ───────────────────────────────── */
+#submenu a {
+  font-family: newyorker;
+  font-size: 11.5px;
+  text-decoration: none;
+  color: #fff;
+  border: 1.5px solid #fff;
+  border-radius: 35px;
+  background-color: var(--dark);
+  opacity: 0.7;
+  transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+#submenu a:hover,
+#submenu a:focus {
+  color: var(--gold);
+  border-color: var(--gold);
+  opacity: 0.95;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer span {
+  color: #8a8c87;
+  transition: color 1s ease-in;
+}
+footer span:hover { color: var(--gold); }
+footer img { width: 18px; height: 14px; }
+
+/* ── Background watermark icon ─────────────────────────────── */
+#BackgroundImg {
+  background-image: url(imago/icon.png);
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
