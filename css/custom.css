@@ -47,9 +47,18 @@ body {
   background-position: center center;
 }
 
-/* Desktop bg */
+/* Desktop bg 
 @media (min-width: 0px) {
   body { background-image: url(../imago/sahel-cover1.png); }
+}
+*/
+@media (min-width: 0px) {
+  body#homepage         { background-image: url(../imago/sahel-cover1.png); }
+  body#research-page     { background-image: url(../imago/cover-sahel2.png); }
+  body#pubpage { background-image: url(../imago/cover-fairycircles.png); }
+  body#teachin-page     { background-image: url(../imago/cover-sahel3.png); }
+  body#hustlepage           { background-image: url(../imago/cover-sahel2.png); }
+  body#touchandgo       { background-image: url(../imago/sahel-cover1.png); }
 }
 /* Mobile bg */
 /*
@@ -188,7 +197,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.slide-prev:hover, .slide-next:hover { opacity: 1; }
+.slide-prev:hover, .slide-next:hover { color: var(--gold-text); opacity: 1; }
 
 .slide-prev {
   left: 0;
@@ -458,7 +467,7 @@ footer img { width: 18px; height: 14px; }
 }
 
 /* Stack on very small screens */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .styled-list li {
     flex-direction: column;
     gap: 0.15rem;
@@ -574,7 +583,7 @@ footer img { width: 18px; height: 14px; }
   font-family: newyorker;
   font-size: 1.1rem;
   font-style: italic;
-  color: var(--gold-text);
+  color: var(--gold);
   margin-bottom: 0.3rem;
 }
 

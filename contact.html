@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Koustav Halder — Teaching &amp; Outreach</title>
+  <title>Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
   <link rel="icon" type="image/png" href="imago/icon.png">
   <link rel="stylesheet" href="css/meyer.css"/>
   <link rel="stylesheet" href="css/custom.css"/>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            gold: '#ae8610', 'gold-text': '#d0a115',
-            'gold-link': '#9e9b04', dark: '#1c1919',
+            gold:        '#ae8610',
+            'gold-text': '#d0a115',
+            'gold-link': '#9e9b04',
+            dark:        '#1c1919',
           },
-          fontFamily: { newyorker: ['newyorker', 'serif'] },
+          fontFamily: {
+            newyorker: ['newyorker', 'serif'],
+          },
         }
       }
     }
@@ -23,7 +28,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body id="teachin-page" class="min-h-screen">
+<body id="touchandgo" class="min-h-screen">
 
   <!-- ═══════════════════════════════════════════════════
        HEADER
@@ -60,15 +65,19 @@
       <a href="research.html">Research</a>
       <a href="publications.html">Publications &amp; Tools</a>
       <a href="cv.html">CV</a>
-      <a href="teaching.html" id="active">Teaching &amp; Outreach</a>
-      <a href="contact.html">Contact</a>
+      <a href="teaching.html">Teaching &amp; Outreach</a>
+      <a href="contact.html" id="active">Contact</a>
     </div>
     </div>
 
   </header>
 
-  <!-- ── Hero ───────────────────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════
+       HERO — full viewport over fixed background.
+       Page title banner + submenu pills sit here.
+  ════════════════════════════════════════════════════ -->
   <div class="h-screen w-full relative">
+
     <!-- Page title banner -->
     <div id="PageTitle"
          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none
@@ -79,43 +88,41 @@
       <span style="font-family: helveticalightreg; color: var(--gold);
                    font-size: clamp(2.0rem, 5.5vw, 2.5rem);
                    font-style: normal; font-variant: all-small-caps;
-                   letter-spacing: 0.06em; white-space: nowrap;">Teaching &amp; Outreach</span>
+                   letter-spacing: 0.06em; white-space: nowrap;">Contact</span>
     </div>
-    <!-- No submenu pills per spec -->
+
   </div>
 
-  <!-- ── Main ───────────────────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════════
+       MAIN CONTENT PANEL
+  ════════════════════════════════════════════════════ -->
   <main class="content-panel relative bg-white w-full">
+
     <button onclick="topFunction()" id="UpTownFunk" title="Back to top">↑</button>
 
-    <!-- ══ Teaching ═══════════════════════════════════════ -->
-    <section id="s-teaching" class="max-w-4xl mx-auto px-4 sm:px-8 py-10">
-      <h2 class="section-heading">Teaching</h2>
+    <!-- ─── Divider + section label ──────────────────── -->
+    <div class="flex justify-center pt-6 pb-2">
+      <img src="imago/divider3.png" alt="Divider" class="w-3/5 max-w-lg"/>
+    </div>
 
-      <ul class="styled-list">
-        <li>
-          <span class="qual-item-primary">Teaching Assistant for Fundamentals of Ecological &amp; Evolutionary Modelling</span>
-          <span class="qual-item-secondary">· Rutgers University · 2023-26</span>
-        </li>
-      </ul>
-    </section>
+    <div class="max-w-3xl mx-auto px-4 sm:px-8 py-10">
 
-    <!-- ══ Outreach ════════════════════════════════════════ -->
-    <section id="s-outreach" class="max-w-4xl mx-auto px-4 sm:px-8 py-10 border-t border-gray-100">
-      <h2 class="section-heading">Outreach</h2>
-
-      <ul class="styled-list">
-        <li>
-          <p class="tool-desc content-text">Co-authored an investigative science journalism article at the Wire Science,
-          covering the underrepresentation of women and minority groups at my alma mater, the Indian Institute of Science Education and Research (IISER) Pune,
-          based on right to information requests and interviews.</p>
-          <p class="pub-links">
-            <a href="https://science.thewire.in/education/minority-report-caste-gender-representation-iiser-pune/" target="_blank" class="pub-link-btn">The Wire</a>
-            <a href="https://web.archive.org/web/20250520163326/https://science.thewire.in/education/minority-report-caste-gender-representation-iiser-pune/" target="_blank" class="pub-link-btn">Wayback Machine</a>
-          </p>
-        </li>
-      </ul>
-    </section>
+      <!-- ── Resume request line ────────────────────────── -->
+      <p class="cv-contact-line content-text">
+        <span class="Styled">P</span>lease reach out below, I am always happy to connect!
+      </p>
+        <!-- Main text (always first in source order) -->
+        <div class="content-text">
+        <p> <span class="home-contact-label">Email:</span>
+            <a href="mailto:koustav.halder@rutgers.edu">koustav.halder@rutgers.edu</a>
+        </p>
+        <p>
+        <span class="home-contact-label">Address:</span> <br/>
+        Department of Ecology, Evolution, and Natural Resources, Rutgers University<br/>
+        14 College Farm Road, New Brunswick, NJ 08901, USA
+        </p>
+        </div>
+    </div>
 
   </main>
 
