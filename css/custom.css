@@ -54,8 +54,8 @@ body {
 */
 @media (min-width: 900px) {
   body#homepage         { background-image: url(../imago/sahel-cover1.png); }
-  body#research-page     { background-image: url(../imago/cover-sahel3.png); }
-  body#pubpage { background-image: url(../imago/cover-fairycircles.png); }
+  body#research-page     { background-image: url(../imago/cover-fairycircles.png); }
+  body#pubpage { background-image: url(../imago/cover-coral-reefer.png); }
   body#teachin-page     { background-image: url(../imago/cover-warli-hor.jpg); }
   body#hustlepage           { background-image: url(../imago/cover-ele1-hor.jpeg); }
   body#touchandgo       { background-image: url(../imago/sahel-cover1.png); }
@@ -64,7 +64,7 @@ body {
 
 @media (max-width: 899px) {
   body#homepage         { background-image: url(../imago/sahel-cover1.png); }
-  body#research-page     { background-image: url(../imago/cover-sahel3.png); }
+  body#research-page     { background-image: url(../imago/cover-coral-reefer-vert.png); }
   body#pubpage { background-image: url(../imago/cover-fairycircles.png);}
   body#teachin-page     { background-image: url(../imago/cover-warli-vert.jpg); }
   body#hustlepage           { background-image: url(../imago/cover-ele1-vert.jpeg); }
