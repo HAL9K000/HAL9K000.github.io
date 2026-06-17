@@ -64,8 +64,8 @@ body {
 
 @media (max-width: 899px) {
   body#homepage         { background-image: url(../imago/sahel-cover1.png); }
-  body#research-page     { background-image: url(../imago/cover-coral-reefer-vert.png); }
-  body#pubpage { background-image: url(../imago/cover-fairycircles.png);}
+  body#research-page     { background-image: url(../imago/cover-fairycircles-vert.png); }
+  body#pubpage { background-image: url(../imago/cover-coral-reefer-vert.png);}
   body#teachin-page     { background-image: url(../imago/cover-warli-vert.jpg); }
   body#hustlepage           { background-image: url(../imago/cover-ele1-vert.jpeg); }
   body#touchandgo       { background-image: url(../imago/sahel-cover1.png);}
